@@ -4,8 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Enter the number of rows for Pascal's Triangle: ");
+
+
+      while(true){
+
         int numRows = int.Parse(Console.ReadLine());
+
+        if(numRows<0){
+            Console.WriteLine("Invalid Pascal’s triangle row number.");
+            continue;
+        }
 
         int[][] pascal = new int[numRows][];
 
@@ -22,7 +30,7 @@ class Program
             pascal[i][i] = 1;
         }
 
-        Console.WriteLine("\nHere is Pascal's Triangle:");
+        
         for (int i = 0; i < numRows; i++)
         {
             for (int j = 0; j < pascal[i].Length; j++)
@@ -32,6 +40,7 @@ class Program
             Console.WriteLine();
         }
 
-        Console.ReadLine();
+       
+    }
     }
 }
